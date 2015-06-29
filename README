@@ -1,0 +1,175 @@
+This directory contains the basic config file for a lite analysis pipeline, which is used to train the high schools students
+for summer camp activity. The easy way to compiler this pipeline is just type a `make` in your term.
+
+For each subdirectary folder, here is the description.
+
+.
+|-- Makefile                          # the main makefile
+|-- README                            # readme file
+|-- bin                               # bin files, compiled programs will be installed in this folder
+|-- database                          # database files, the human genome reference will be downloaded and be indexed in this folder
+|   `-- Makefile                      # makefile for downloading humref and index it
+|-- generate.pl                       # perl script to generate config files and pipeline scripts, just run it by perl without any furture parameters
+|-- rawdata                           # raw data files to analysis, these files are manually generated with very small sequences entries
+|   |-- sample01_1.fq.gz
+|   |-- sample01_2.fq.gz
+|   |-- sample02_1.fq.gz
+|   |-- sample02_2.fq.gz
+|   |-- sample03_1.fq.gz
+|   |-- sample03_2.fq.gz
+|   |-- sample04_1.fq.gz
+|   |-- sample04_2.fq.gz
+|   |-- sample05_1.fq.gz
+|   |-- sample05_2.fq.gz
+|   |-- sample06_1.fq.gz
+|   |-- sample06_2.fq.gz
+|   |-- sample07_1.fq.gz
+|   |-- sample07_2.fq.gz
+|   |-- sample08_1.fq.gz
+|   |-- sample08_2.fq.gz
+|   |-- sample09_1.fq.gz
+|   |-- sample09_2.fq.gz
+|   |-- sample10_1.fq.gz
+|   |-- sample10_2.fq.gz
+|   |-- sample11_1.fq.gz
+|   |-- sample11_2.fq.gz
+|   |-- sample12_1.fq.gz
+|   |-- sample12_2.fq.gz
+|   |-- sample13_1.fq.gz
+|   |-- sample13_2.fq.gz
+|   |-- sample14_1.fq.gz
+|   |-- sample14_2.fq.gz
+|   |-- sample15_1.fq.gz
+|   |-- sample15_2.fq.gz
+|   |-- sample16_1.fq.gz
+|   |-- sample16_2.fq.gz
+|   |-- sample17_1.fq.gz
+|   |-- sample17_2.fq.gz
+|   |-- sample18_1.fq.gz
+|   |-- sample18_2.fq.gz
+|   |-- sample19_1.fq.gz
+|   |-- sample19_2.fq.gz
+|   |-- sample20_1.fq.gz
+|   |-- sample20_2.fq.gz
+|   |-- sample21_1.fq.gz
+|   |-- sample21_2.fq.gz
+|   |-- sample22_1.fq.gz
+|   |-- sample22_2.fq.gz
+|   |-- sample23_1.fq.gz
+|   |-- sample23_2.fq.gz
+|   |-- sample24_1.fq.gz
+|   |-- sample24_2.fq.gz
+|   |-- sample25_1.fq.gz
+|   |-- sample25_2.fq.gz
+|   |-- sample26_1.fq.gz
+|   |-- sample26_2.fq.gz
+|   |-- sample27_1.fq.gz
+|   |-- sample27_2.fq.gz
+|   |-- sample28_1.fq.gz
+|   |-- sample28_2.fq.gz
+|   |-- sample29_1.fq.gz
+|   |-- sample29_2.fq.gz
+|   |-- sample30_1.fq.gz
+|   |-- sample30_2.fq.gz
+|   `-- sample_list.txt
+|-- scripts                                # this folder will only be existed after you config this pipeline, send each subfolder to students and run these sh script manually
+|   |-- sample01
+|   |   |-- 01.sample01.alignment.sh
+|   |   `-- 02.sample01.call.sh
+|   |-- sample02
+|   |   |-- 01.sample02.alignment.sh
+|   |   `-- 02.sample02.call.sh
+|   |-- sample03
+|   |   |-- 01.sample03.alignment.sh
+|   |   `-- 02.sample03.call.sh
+|   |-- sample04
+|   |   |-- 01.sample04.alignment.sh
+|   |   `-- 02.sample04.call.sh
+|   |-- sample05
+|   |   |-- 01.sample05.alignment.sh
+|   |   `-- 02.sample05.call.sh
+|   |-- sample06
+|   |   |-- 01.sample06.alignment.sh
+|   |   `-- 02.sample06.call.sh
+|   |-- sample07
+|   |   |-- 01.sample07.alignment.sh
+|   |   `-- 02.sample07.call.sh
+|   |-- sample08
+|   |   |-- 01.sample08.alignment.sh
+|   |   `-- 02.sample08.call.sh
+|   |-- sample09
+|   |   |-- 01.sample09.alignment.sh
+|   |   `-- 02.sample09.call.sh
+|   |-- sample10
+|   |   |-- 01.sample10.alignment.sh
+|   |   `-- 02.sample10.call.sh
+|   |-- sample11
+|   |   |-- 01.sample11.alignment.sh
+|   |   `-- 02.sample11.call.sh
+|   |-- sample12
+|   |   |-- 01.sample12.alignment.sh
+|   |   `-- 02.sample12.call.sh
+|   |-- sample13
+|   |   |-- 01.sample13.alignment.sh
+|   |   `-- 02.sample13.call.sh
+|   |-- sample14
+|   |   |-- 01.sample14.alignment.sh
+|   |   `-- 02.sample14.call.sh
+|   |-- sample15
+|   |   |-- 01.sample15.alignment.sh
+|   |   `-- 02.sample15.call.sh
+|   |-- sample16
+|   |   |-- 01.sample16.alignment.sh
+|   |   `-- 02.sample16.call.sh
+|   |-- sample17
+|   |   |-- 01.sample17.alignment.sh
+|   |   `-- 02.sample17.call.sh
+|   |-- sample18
+|   |   |-- 01.sample18.alignment.sh
+|   |   `-- 02.sample18.call.sh
+|   |-- sample19
+|   |   |-- 01.sample19.alignment.sh
+|   |   `-- 02.sample19.call.sh
+|   |-- sample20
+|   |   |-- 01.sample20.alignment.sh
+|   |   `-- 02.sample20.call.sh
+|   |-- sample21
+|   |   |-- 01.sample21.alignment.sh
+|   |   `-- 02.sample21.call.sh
+|   |-- sample22
+|   |   |-- 01.sample22.alignment.sh
+|   |   `-- 02.sample22.call.sh
+|   |-- sample23
+|   |   |-- 01.sample23.alignment.sh
+|   |   `-- 02.sample23.call.sh
+|   |-- sample24
+|   |   |-- 01.sample24.alignment.sh
+|   |   `-- 02.sample24.call.sh
+|   |-- sample25
+|   |   |-- 01.sample25.alignment.sh
+|   |   `-- 02.sample25.call.sh
+|   |-- sample26
+|   |   |-- 01.sample26.alignment.sh
+|   |   `-- 02.sample26.call.sh
+|   |-- sample27
+|   |   |-- 01.sample27.alignment.sh
+|   |   `-- 02.sample27.call.sh
+|   |-- sample28
+|   |   |-- 01.sample28.alignment.sh
+|   |   `-- 02.sample28.call.sh
+|   |-- sample29
+|   |   |-- 01.sample29.alignment.sh
+|   |   `-- 02.sample29.call.sh
+|   `-- sample30
+|       |-- 01.sample30.alignment.sh
+|       `-- 02.sample30.call.sh
+`-- source_codes                              # the sources files of bwa, samtools, and bcftools will be downloaded and compiled in this folder
+    |-- Makefile
+    |-- bcftools
+    |   `-- Makefile
+    |-- bwa
+    |   `-- Makefile
+    `-- samtools
+        `-- Makefile
+
+38 directories, 129 files
